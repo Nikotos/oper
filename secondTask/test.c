@@ -93,6 +93,8 @@ int main(int argc, char** argv) {
                 }
             }
             
+            msg.type = 1;
+            int sendResult = msgsnd(messageQueueID, &msg, 0, 0);
             
             msg.type = 0;
             int recieveResult = msgrcv(messageQueueID, &msg, 0, number, 0);
